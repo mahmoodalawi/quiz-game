@@ -19,7 +19,7 @@ const quizlist = [
 /*-------------------------------- Variables --------------------------------*/
 
 let questionsIndex = 0;
-Score = 0;
+let Score = 0;
 
 
 /*------------------------ Cached Element References ------------------------*/
