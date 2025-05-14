@@ -30,6 +30,15 @@ const resetButton = document.getElementById('reset-button');
 const scoreElement = document.getElementById('score');
 const answersElement = document.getElementById('answers');
 
+
+// console.log(resultElement);
+// console.log(questionElement);
+// console.log(resetButton);
+// console.log(scoreElement);
+// console.log(answersElement);
+
+
 /*----------------------------- Event Listeners -----------------------------*/
 
 /*-------------------------------- Functions --------------------------------*/
+
