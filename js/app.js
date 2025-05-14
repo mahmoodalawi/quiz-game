@@ -18,8 +18,17 @@ const quizlist = [
   ];
 /*-------------------------------- Variables --------------------------------*/
 
+let questionsIndex = 0;
+Score = 0;
+
 
 /*------------------------ Cached Element References ------------------------*/
+
+const resultElement = document.getElementById('result')
+const questionElement = document.getElementById('question');
+const resetButton = document.getElementById('reset-button');
+const scoreElement = document.getElementById('score');
+const answersElement = document.getElementById('answers');
 
 /*----------------------------- Event Listeners -----------------------------*/
 
