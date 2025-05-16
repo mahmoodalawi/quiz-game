@@ -28,7 +28,10 @@ const resultElement = document.getElementById('result')
 const questionElement = document.getElementById('question');
 const resetButton = document.getElementById('reset-button');
 const scoreElement = document.getElementById('score');
+const progressBar = document.getElementById('progress-bar');
 const answersElement = document.getElementById('answers');
+
+
 
 
 // console.log(resultElement);
