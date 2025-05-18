@@ -46,4 +46,11 @@ const answersElement = document.getElementById('answers');
 resetButton.addEventListener('click', resetQuiz);
 /*-------------------------------- Functions --------------------------------*/
 
+function init() {
+   
+    startButton.addEventListener('click', startQuiz);
+    
+}
+
+
 
