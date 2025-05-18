@@ -43,5 +43,9 @@ const answersElement = document.getElementById('answers');
 
 /*----------------------------- Event Listeners -----------------------------*/
 
+resetButton.addEventListener('click', resetQuiz);
+
+
 /*-------------------------------- Functions --------------------------------*/
+
 
