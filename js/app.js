@@ -67,12 +67,15 @@ function showQuestion() {
         endQuiz();
         return;
     }
+  currentQuestion.answers.forEach(answer => {
+        const button = document.createElement('button');
+        button.textContent = answer;
+        button.addEventListener('click', () => selectAnswer(answer));
+        answersElement.appendChild(button);
+    });
 
-    const currentQuestion = quizlist[currentQuestionIndex];
-    questionElement.textContent = currentQuestion.question;
-    answersElement.innerHTML = '';
-
-
+    updateProgressBar();
+   
 }
 
 function selectAnswer(selectedAnswer) {
