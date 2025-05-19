@@ -113,6 +113,14 @@ function updateProgressBar() {
     progressBar.style.width = `${progress}%`;
 }
 
+function endQuiz() {
+    
+    // TODO: Hide the Quiz  elements question container and score.
+    // TODO: Show final score to the player
+    // TODO: Display reset button 
+    // TODO: add if condition ( win or loss ) based on the score
+}
+
 
 
 
