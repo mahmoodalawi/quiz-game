@@ -73,6 +73,7 @@ function showQuestion() {
         endQuiz();
         return;
     }
+
   currentQuestion.answers.forEach(answer => {
         const button = document.createElement('button');
         button.textContent = answer;
@@ -106,6 +107,12 @@ function selectAnswer(selectedAnswer) {
 function updateScore() {
     scoreElement.textContent = `Your Score: ${score}/${quizlist.length}`;
 }
+
+function updateProgressBar() {
+    const progress = ((currentQuestionIndex) / quizlist.length) * 100;
+    progressBar.style.width = `${progress}%`;
+}
+
 
 
 
