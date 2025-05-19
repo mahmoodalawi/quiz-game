@@ -48,18 +48,24 @@ resetButton.addEventListener('click', resetQuiz);
 
 function init() {
     resetButton.style.display = 'none';
-    statusElement.style.display = 'none';
-    questionContainer.style.display = 'none';
-    scoreElement.style.display = 'none';
+    statusButton.style.display = 'none';
+    
     startButton.addEventListener('click', startQuiz);
     
+    // Hide question container initially
+    questionContainer.style.display = 'none';
+    scoreElement.style.display = 'none';
 }
+    
+
 
 function startQuiz() {
     startButton.style.display = 'none';
     questionContainer.style.display = 'block';
     scoreElement.style.display = 'block';
-    
+    showQuestion();
+    updateScore();
+
 }
 
 function showQuestion() {
