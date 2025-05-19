@@ -74,3 +74,25 @@ function showQuestion() {
 
 
 }
+
+function selectAnswer(selectedAnswer) {
+    const currentQuestion = quizlist[currentQuestionIndex];
+    if (selectedAnswer === currentQuestion.correct) {
+        score++;
+        resultElement.textContent = "Correct!";
+        resultElement.style.color = "green";
+    } else {
+        resultElement.textContent = `Wrong! The correct answer is: ${currentQuestion.correct}`;
+        resultElement.style.color = "red";
+    }
+
+    currentQuestionIndex++;
+    updateScore();
+    setTimeout(() => {
+        resultElement.textContent = '';
+        showQuestion();
+    }, );
+}
+
+
+
