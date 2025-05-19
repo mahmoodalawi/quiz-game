@@ -59,6 +59,18 @@ function startQuiz() {
     startButton.style.display = 'none';
     questionContainer.style.display = 'block';
     scoreElement.style.display = 'block';
-    showQuestion();
-    updateScore();
+    
+}
+
+function showQuestion() {
+    if (currentQuestionIndex >= quizlist.length) {
+        endQuiz();
+        return;
+    }
+
+    const currentQuestion = quizlist[currentQuestionIndex];
+    questionElement.textContent = currentQuestion.question;
+    answersElement.innerHTML = '';
+
+
 }
