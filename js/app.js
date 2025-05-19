@@ -97,5 +97,9 @@ function selectAnswer(selectedAnswer) {
     }, );
 }
 
+function updateScore() {
+    scoreElement.textContent = `Your Score: ${score}/${quizlist.length}`;
+}
+
 
 
