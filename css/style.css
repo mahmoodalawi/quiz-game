@@ -85,8 +85,16 @@ body {
     text-align: center;
     color: white;
   }
-
+.progress-b {
+    width: 100%;
+    height: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin-top: 20px;
+    overflow: hidden;
+}
 
   #progress-bar {
+
    
 }
