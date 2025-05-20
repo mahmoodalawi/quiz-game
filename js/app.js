@@ -18,8 +18,8 @@ const quizlist = [
   ];
 /*-------------------------------- Variables --------------------------------*/
 
-let questionsIndex = 0;
-let Score = 0;
+let currentQuestionIndex = 0;
+let score = 0;
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -69,6 +69,9 @@ function startQuiz() {
 }
 
 function showQuestion() {
+
+    const currentQuestion = quizlist[currentQuestionIndex];
+
     if (currentQuestionIndex >= quizlist.length) {
         endQuiz();
         return;
