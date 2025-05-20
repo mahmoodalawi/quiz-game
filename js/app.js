@@ -127,6 +127,15 @@ function endQuiz() {
     resetButton.style.display = 'block';
     statusButton.style.display = 'block';
 
+    const r = ( score / quizlist.length) * 100;
+
+    if(r >= 70.0){
+        statusButton.textContent = "Passed";
+        statusButton.style.color = "green";
+    }else{
+        statusButton.textContent = "Failed";
+        statusButton.style.color = "green";
+    }
 
 }
 
