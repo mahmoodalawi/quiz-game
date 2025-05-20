@@ -115,12 +115,22 @@ function updateProgressBar() {
 
 function endQuiz() {
     
-    // TODO: Hide the Quiz  elements question container and score.
-    // TODO: Show final score to the player
-    // TODO: Display reset button 
-    // TODO: add if condition ( win or loss ) based on the score
+    questionContainer.style.display = 'none';
+    scoreElement.style.display = 'none';
+    progressBar.style.width = '100%';
+    
+    resultElement.textContent = `Final Score: ${score}/${quizlist.length}`;
+    resultElement.style.color = "black";
+    resultElement.style.fontSize = '24px';
+    resultElement.style.margin = '20px 0';
+    
+    resetButton.style.display = 'block';
+    statusButton.style.display = 'block';
+
+
 }
 
 
 
-
+// Initialize the quiz
+init();
