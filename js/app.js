@@ -140,6 +140,18 @@ function endQuiz() {
 }
 
 
+function resetQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    //quizStarted = false;
+    resultElement.textContent = '';
+    progressBar.style.width = '0px';
+    resetButton.style.display = 'none';
+    startButton.style.display = 'block';
+    init();
+}
+
+
 
 // Initialize the quiz
 init();
