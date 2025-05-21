@@ -15,38 +15,30 @@ const quizlist = [
         answers: ["BD 1000", "BD 200", "BD 350"],
         correct: "BD 350"
     }
-  ];
-/*-------------------------------- Variables --------------------------------*/
+];
 
+/*-------------------------------- Variables --------------------------------*/
 let currentQuestionIndex = 0;
 let score = 0;
-
+//let quizStarted = false;
 
 /*------------------------ Cached Element References ------------------------*/
-
-const resultElement = document.getElementById('result')
+const resultElement = document.getElementById('result');
 const questionElement = document.getElementById('question');
+const questionContainer = document.getElementById('question-container');
 const resetButton = document.getElementById('reset-button');
 const scoreElement = document.getElementById('score');
 const progressBar = document.getElementById('progress-bar');
 const answersElement = document.getElementById('answers');
-
-
-
-
-// console.log(resultElement);
-// console.log(questionElement);
-// console.log(resetButton);
-// console.log(scoreElement);
-// console.log(answersElement);
-
+const startButton = document.getElementById('start-button');
+const statusButton = document.getElementById('status');
 
 /*----------------------------- Event Listeners -----------------------------*/
-
 resetButton.addEventListener('click', resetQuiz);
-/*-------------------------------- Functions --------------------------------*/
 
+/*-------------------------------- Functions --------------------------------*/
 function init() {
+    // Hide reset button initially
     resetButton.style.display = 'none';
     statusButton.style.display = 'none';
     
@@ -56,28 +48,27 @@ function init() {
     questionContainer.style.display = 'none';
     scoreElement.style.display = 'none';
 }
-    
-
 
 function startQuiz() {
+    //quizStarted = true;
     startButton.style.display = 'none';
     questionContainer.style.display = 'block';
     scoreElement.style.display = 'block';
     showQuestion();
     updateScore();
-
 }
 
 function showQuestion() {
-
-    const currentQuestion = quizlist[currentQuestionIndex];
-
     if (currentQuestionIndex >= quizlist.length) {
         endQuiz();
         return;
     }
 
-  currentQuestion.answers.forEach(answer => {
+    const currentQuestion = quizlist[currentQuestionIndex];
+    questionElement.textContent = currentQuestion.question;
+    answersElement.innerHTML = '';
+
+    currentQuestion.answers.forEach(answer => {
         const button = document.createElement('button');
         button.textContent = answer;
         button.addEventListener('click', () => selectAnswer(answer));
@@ -85,7 +76,6 @@ function showQuestion() {
     });
 
     updateProgressBar();
-   
 }
 
 function selectAnswer(selectedAnswer) {
@@ -95,7 +85,7 @@ function selectAnswer(selectedAnswer) {
         resultElement.textContent = "Correct!";
         resultElement.style.color = "green";
     } else {
-        resultElement.textContent = `Wrong! The correct answer is: ${currentQuestion.correct}`;
+        resultElement.textContent = `Wrong!`;
         resultElement.style.color = "red";
     }
 
@@ -104,7 +94,7 @@ function selectAnswer(selectedAnswer) {
     setTimeout(() => {
         resultElement.textContent = '';
         showQuestion();
-    }, );
+    }, 1000);
 }
 
 function updateScore() {
@@ -117,7 +107,6 @@ function updateProgressBar() {
 }
 
 function endQuiz() {
-    
     questionContainer.style.display = 'none';
     scoreElement.style.display = 'none';
     progressBar.style.width = '100%';
@@ -142,7 +131,6 @@ function endQuiz() {
 
 }
 
-
 function resetQuiz() {
     currentQuestionIndex = 0;
     score = 0;
@@ -153,8 +141,6 @@ function resetQuiz() {
     startButton.style.display = 'block';
     init();
 }
-
-
 
 // Initialize the quiz
 init();

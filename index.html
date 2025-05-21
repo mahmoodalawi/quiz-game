@@ -5,29 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Quiz</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script defer src="/js/app.js"></script>
+    <script defer src="./js/app.js"></script>
 </head>
 <body>
     <div class="main-container">
         <h1>Game Quiz</h1>
+        <div class="btn-main">
+          <button id="start-button">Start</button>
+        </div>
 
         <div id="question-container">
           <p id="question"></p>
           <div id="answers" class="answers"></div>
         </div>
 
+        <p id="result"></p>
+        
         <div class="btn-main">
           <button id="reset-button">Reset</button>
+          <button id="status"></button>
         </div>
 
         <p id="score">Your Score:</p>
-        <p id="result"></p>
 
         <div class="progress-b">
             <div id="progress-bar"></div>
         </div>
-
       </div>
-
 </body>
 </html>
